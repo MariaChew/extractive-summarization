@@ -1,7 +1,5 @@
 # Extractive Summarization
 
-[![CI](https://github.com/<USERNAME>/<REPO>/actions/workflows/ci.yml/badge.svg)](https://github.com/<USERNAME>/<REPO>/actions/workflows/ci.yml)
-
 Простой сервис экстрактивной суммаризации текста:
 TF-скоринг слов + ранжирование предложений, отдаётся через FastAPI.
 
