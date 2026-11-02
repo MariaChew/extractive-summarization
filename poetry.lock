@@ -84,16 +84,7 @@ files = [
     {file = "certifi-2026.7.22.tar.gz", hash = "sha256:741e2c3b351ddf169a738da9f2c048608ff7f2c5cc02f1ebc6b118bb090d5d55"},
 ]
 
-[[package]]
-name = "cfgv"
-version = "3.5.0"
-description = "Validate configuration and produce human readable error messages."
-optional = false
-python-versions = ">=3.10"
-files = [
-    {file = "cfgv-3.5.0-py2.py3-none-any.whl", hash = "sha256:a8dc6b26ad22ff227d2634a65cb388215ce6cc96bbcc5cfde7641ae87e8dacc0"},
-    {file = "cfgv-3.5.0.tar.gz", hash = "sha256:d5b1034354820651caa73ede66a6294d6e95c1b00acc5e9b098e917404669132"},
-]
+
 
 [[package]]
 name = "click"
@@ -632,7 +623,6 @@ files = [
 ]
 
 [package.dependencies]
-cfgv = ">=2.0.0"
 identify = ">=1.0.0"
 nodeenv = ">=0.11.1"
 pyyaml = ">=5.1"

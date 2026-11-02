@@ -1,0 +1,54 @@
+# Виртуальные окружения и локальные кеши
+.venv/
+venv/
+env/
+ENV/
+
+# Git и CI
+.git/
+.gitignore
+.github/
+.gitattributes
+
+# Python-мусор
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+.eggs/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+
+# Инструменты и IDE
+.idea/
+.vscode/
+*.swp
+
+# Документация и служебные файлы — в образе не нужны
+README.md
+docs/
+*.md
+!README.md
+docker-compose.yml
+Dockerfile
+.dockerignore
+Makefile
+CHANGELOG.md
+LICENSE
+
+# Данные и артефакты моделей
+data/
+models/
+artifacts/
+*.log
+.env
+.env.*

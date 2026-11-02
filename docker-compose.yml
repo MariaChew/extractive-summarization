@@ -1,0 +1,35 @@
+# docker-compose.yml — локальный запуск сервиса в контейнере
+#
+#   docker compose up --build        # собрать и запустить
+#   docker compose logs -f api       # смотреть логи
+#   docker compose down              # остановить и удалить контейнер
+#
+services:
+  api:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    image: extractive-summarization:0.1.0
+    container_name: extractive-summarization-api
+    ports:
+      - "8000:8000"
+    environment:
+      # Значения читает uvicorn из CMD в Dockerfile
+      PORT: "8000"
+    restart: unless-stopped
+    # Лимиты, чтобы сервис не съел всю память хоста
+    deploy:
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: 512M
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - "import urllib.request, sys; sys.exit(0 if urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=3).status == 200 else 1)"
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
